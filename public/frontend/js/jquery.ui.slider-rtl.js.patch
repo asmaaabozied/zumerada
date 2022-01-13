@@ -1,0 +1,39 @@
+2c2
+<  * jQuery UI Slider 1.8.9.rtl
+---
+>  * jQuery UI Slider 1.8.9
+31d30
+< 		isRTL: false,
+176,181d174
+< 				var adjust = function(minMax, offset) {
+< 					if ( curVal === minMax ) {
+< 						return;
+< 					}
+< 					newVal = self._trimAlignValue( curVal + offset );
+< 				};
+196,197d188
+< 						adjust( self._valueMax(), step );
+< 						break;
+199c190,193
+< 						adjust( self._valueMax(), self.options.isRTL ? -step : step );
+---
+> 						if ( curVal === self._valueMax() ) {
+> 							return;
+> 						}
+> 						newVal = self._trimAlignValue( curVal + step );
+202,203d195
+< 						adjust( self._valueMin(), -step );
+< 						break;
+205c197,200
+< 						adjust( self._valueMin(), self.options.isRTL ? step : -step );
+---
+> 						if ( curVal === self._valueMin() ) {
+> 							return;
+> 						}
+> 						newVal = self._trimAlignValue( curVal - step );
+380,382d374
+< 		if ( this.options.isRTL ) {
+< 			percentMouse = 1 - percentMouse;
+< 		}
+666d657
+< 			valPercent = (self.options.isRTL ? 100 - valPercent : valPercent);

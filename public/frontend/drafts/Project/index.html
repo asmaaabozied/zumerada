@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body ng-controller="countryCtrl">
+  Country : <select ng-model="country" ng-options="country.name for country in countriesWithPhoneCode">
+    <option value="">Select country</option>
+  </select>
+<br/><br/>
+ Phone : <input value="{{country.dial_code}}" disabled/>
+<input ng-model="phone"/>
+<br/>
+{{country.name}} - {{country.dial_code}} {{phone}}
+</body>
+
+</html>
